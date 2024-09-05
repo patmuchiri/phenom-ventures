@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Phenom Ventures Ltd</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        h1, h2 {
+            color: #007BFF; /* Sky Blue */
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Impactful Font */
+        }
+        h2 {
+            color: #FF5733; /* Orange */
+            margin-top: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            border-bottom: 2px solid #007BFF; /* Sky Blue */
+            padding-bottom: 10px;
+            display: inline-block;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Impactful Font */
+        }
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+        .team-member img {
+            border-radius: 50%;
+            margin-right: 15px;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border: 2px solid #007BFF; /* Sky Blue */
+        }
+        .team-member h3 {
+            color: #007BFF; /* Sky Blue */
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Impactful Font */
+        }
+        .team-member p {
+            margin: 5px 0;
+        }
+        .mission {
+            background-color: #E3F2FD; /* Light Sky Blue */
+            color: #333;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Impactful Font */
+        }
+        .home-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007BFF; /* Sky Blue */
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+        .home-button:hover {
+            background-color: #0056b3; /* Darker Sky Blue */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About Us</h1>
+        
+        <div class="section history">
+            <h2>Company History</h2>
+            <p>Founded in 2013, Phenom Ventures Ltd has been at the forefront of providing innovative ICT solutions and services. Our dedication to excellence and customer satisfaction has driven our growth and success over the years.</p>
+        </div>
+        
+        <div class="section team">
+            <h2>Meet Our Team</h2>
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='profile.jpg') }}" alt="Patrick Muchiri" class="profile-img">
+                <div>
+                    <h3>Patrick Muchiri</h3>
+                    <p><strong>Founder / Chief Executive Officer</strong></p>
+                    <p>Dedicated Technical Support Engineer with 8 years of experience helping organizations maintain smooth operations. Expertise in ICT systems and network infrastructure environments. Commended for rapidly and effectively resolving downtime and efficiently integrating new hardware and software components. Self-motivated and always looking for ways to make a positive difference.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section mission">
+            <h2>Our Mission</h2>
+            <p>To deliver exceptional ICT solutions and services that empower businesses and enhance their technological capabilities. We are committed to innovation, reliability, and excellence in every project we undertake.</p>
+        </div>
+
+        <!-- Home Button -->
+        <a href="{{ url_for('home') }}" class="home-button">Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Phenom Ventures Ltd</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url("{{ url_for('static', filename='home.png') }}") no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* White with slight opacity for readability */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700; /* Bold */
+            color: #FF5733; /* Orange */
+            font-size: 3em; /* Larger font size */
+            margin: 0;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+        }
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            color: #007BFF; /* Sky Blue */
+            font-size: 2em; /* Slightly smaller than h1 */
+            margin: 20px 0;
+            line-height: 1.3;
+        }
+        .portfolio-item {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+        .portfolio-item img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .portfolio-item h2 {
+            font-size: 1.5em;
+            color: #333; /* Darker text color */
+            margin: 10px 0;
+        }
+        .portfolio-item p {
+            font-size: 1em;
+            color: #555; /* Slightly lighter text color */
+            line-height: 1.6;
+        }
+        .nav-menu {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000; /* Ensure it stays above other content */
+        }
+        .nav-menu a {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            color: #007BFF; /* Sky Blue */
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .nav-menu a:hover {
+            background-color: #E3F2FD; /* Light Sky Blue */
+            color: #0056b3; /* Darker Sky Blue */
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-menu">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About Us</a>
+        <a href="{{ url_for('services') }}">Services</a>
+        <a href="{{ url_for('portfolio') }}">Portfolio</a>
+        <a href="{{ url_for('testimonials') }}">Testimonials</a>
+        <a href="{{ url_for('contact') }}">Contact Us</a>
+    </div>
+    <div class="container">
+        <h1>Our Portfolio</h1>
+        <div class="portfolio-item">
+            <h2>Raybells Hotel, Nyeri</h2>
+            <img src="{{ url_for('static', filename='raybells.jpg') }}" alt="Raybells Hotel">
+            <p>Implemented a comprehensive CCTV surveillance system at Raybells Hotel, enhancing security and operational efficiency with high-definition cameras and remote monitoring capabilities.</p>
+        </div>
+        <div class="portfolio-item">
+            <h2>Outspan Medical College Student Hostels</h2>
+            <img src="{{ url_for('static', filename='outspan.jpg') }}" alt="Outspan Medical College">
+            <p>Provided high-speed internet services to student hostels at Outspan Medical College, delivering scalable and reliable connectivity that enabled smooth operations and enhanced productivity.</p>
+        </div>
+        <div class="portfolio-item">
+            <h2>Sunrise Hostel</h2>
+            <img src="{{ url_for('static', filename='sunrise.jpg') }}" alt="Sunrise Hostel">
+            <p>Optimized the WiFi network for Sunrise Hostel, improving connectivity and user experience across the campus with well-placed and fine-tuned access points.</p>
+        </div>
+    </div>
+</body>
+</html>

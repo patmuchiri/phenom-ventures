@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials | Phenom Ventures Ltd</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link your external styles file here -->
+    <style>
+        /* Enhanced font style for testimonials */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        /* Home Button Style */
+        .home-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #2c7fbd;
+            color: #fff;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #1a5b87;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Testimonials Section */
+        .container {
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c7fbd;
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .testimonial {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #2c7fbd;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Testimonials Content -->
+    <div class="container">
+        <h1>Testimonials</h1>
+        <div class="testimonial">
+            <p>"Phenom Ventures Ltd provided exceptional service in installing our CCTV surveillance system. The high-definition cameras and remote monitoring capabilities have significantly improved our security and operational efficiency. Their professionalism and expertise were evident throughout the project."</p>
+            <p class="testimonial-author">– Anne Doris Karuga, General Manager – Raybells Hotel, Nyeri</p>
+        </div>
+        <div class="testimonial">
+            <p>"The internet service provided by Phenom Ventures Ltd has been a game-changer for our student hostels. Their reliable and high-speed connectivity has ensured smooth operations and improved productivity for both students and staff. We couldn’t be happier with the results!"</p>
+            <p class="testimonial-author">– Andrew, IT Coordinator – Outspan Medical College</p>
+        </div>
+        <div class="testimonial">
+            <p>"Phenom Ventures Ltd did an outstanding job optimizing our WiFi network. The installation and fine-tuning of the access points have greatly enhanced connectivity across our campus. The improved user experience has been noticeable and greatly appreciated by everyone here."</p>
+            <p class="testimonial-author">– Wachira, Facilities Manager – Sunrise Hostel</p>
+        </div>
+    </div>
+
+    <!-- Home Button -->
+    <a href="{{ url_for('home') }}" class="home-button">Home</a>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phenom Ventures Ltd - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+    <div class="header-container">
+        <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Phenom Ventures Ltd Logo" class="logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('services') }}">Services</a></li>
+                <li><a href="{{ url_for('portfolio') }}">Portfolio</a></li>
+                <li><a href="{{ url_for('testimonials') }}">Testimonials</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="section">
+        <h2>Welcome to Phenom Ventures Ltd</h2>
+        <p>At Phenom Ventures Ltd, we specialize in delivering top-tier ICT solutions and services designed to drive your business forward. Our expert team leverages the latest technologies to ensure you remain at the cutting edge of the digital landscape.</p>
+        <h3>Core Benefits:</h3>
+        <ul>
+            <li><strong>Comprehensive ICT Solutions:</strong> Tailored technology solutions to streamline and enhance your operations.</li>
+            <li><strong>Expert Support:</strong> Dedicated professionals providing exceptional service and support.</li>
+            <li><strong>Client-Focused Approach:</strong> Customized strategies to address your unique ICT needs and objectives.</li>
+            <li><strong>Smooth Integration:</strong> Seamless implementation of advanced technologies into your existing systems.</li>
+        </ul>
+        <p>Discover how Phenom Ventures Ltd can transform your ICT capabilities. <a href="{{ url_for('contact') }}">Contact Us</a> for a free consultation and take the next step toward a more efficient, technology-driven future.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Phenom Ventures Ltd. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

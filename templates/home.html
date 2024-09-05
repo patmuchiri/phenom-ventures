@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Phenom Ventures Ltd</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url("{{ url_for('static', filename='network.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* White with slight opacity */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700; /* Bold */
+            color: #007BFF; /* Sky Blue */
+            font-size: 3em; /* Larger font size for emphasis */
+            margin: 0;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+        p {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            color: #333;
+            font-size: 1.25em;
+            margin: 20px 0;
+            line-height: 1.6;
+            max-width: 800px;
+            display: inline-block;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            color: #fff;
+            background-color: #007BFF; /* Sky Blue */
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3; /* Darker Sky Blue */
+        }
+        .nav-menu {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .nav-menu a {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            color: #007BFF;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .nav-menu a:hover {
+            background-color: #E3F2FD; /* Light Sky Blue */
+            color: #0056b3;
+        }
+        .benefits {
+            margin: 40px 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .benefit-box {
+            background-color: rgba(255, 255, 255, 0.8); /* White with slight opacity */
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px; /* Fixed width for consistent box size */
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+        }
+        .benefit-box h3 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            color: #FF5733; /* Orange */
+            font-size: 1.5em;
+            margin: 0 0 10px;
+        }
+        .benefit-box p {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            color: #333;
+            font-size: 1.1em;
+            margin: 0;
+            line-height: 1.6;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 150px; /* Adjust width as needed */
+            z-index: 1000;
+            opacity: 0.9; /* Slight transparency to blend with background */
+        }
+        .logo img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px; /* Optional: Rounded corners for a modern look */
+        }
+        .contact-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Phenom Ventures Ltd Logo">
+    </div>
+    <div class="nav-menu">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About Us</a>
+        <a href="{{ url_for('services') }}">Services</a>
+        <a href="{{ url_for('portfolio') }}">Portfolio</a>
+        <a href="{{ url_for('testimonials') }}">Testimonials</a>
+        <a href="{{ url_for('contact') }}">Contact Us</a>
+    </div>
+    <div class="container">
+        <h1>Welcome to Phenom Ventures Ltd</h1>
+        <p>We provide innovative ICT solutions and services tailored to your needs.</p>
+        <a href="{{ url_for('services') }}" class="button">Explore Services</a>
+    </div>
+    <div class="benefits">
+        <div class="benefit-box">
+            <h3>Innovative Solutions</h3>
+            <p>Leverage state-of-the-art technology to optimize and enhance your operations.</p>
+        </div>
+        <div class="benefit-box">
+            <h3>Expert Team</h3>
+            <p>Collaborate with industry professionals committed to delivering outstanding results.</p>
+        </div>
+        <div class="benefit-box">
+            <h3>Customer-Centric Approach</h3>
+            <p>Customized solutions designed to meet your unique challenges and goals.</p>
+        </div>
+        <div class="benefit-box">
+            <h3>Seamless Integration</h3>
+            <p>Effortlessly integrate advanced technologies with your existing systems.</p>
+        </div>
+    </div>
+    <a href="{{ url_for('contact') }}" class="button contact-button">Get Started Today!</a>
+</body>
+</html>
+
