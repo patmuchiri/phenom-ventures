@@ -96,26 +96,47 @@
             background-color: #0056b3;
         }
     </style>
+    <script>
+        function sendWhatsAppMessage(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+
+            // Compose the message text
+            const whatsappMessage = `Hello, my name is ${name}. My email is ${email}, and my phone number is ${phone}. Here is my message: ${message}`;
+
+            // Encode the message to be URL safe
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+
+            // WhatsApp API URL
+            const whatsappURL = `https://wa.me/254788210783?text=${encodedMessage}`;
+
+            // Redirect to WhatsApp
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <h1>Contact Us</h1>
-        <form action="/contact/submit" method="POST">
+        <form onsubmit="sendWhatsAppMessage(event)">
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-            
+
             <label for="email">Your Email</label>
             <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-            
+
             <label for="phone">Your Phone Number</label>
             <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-            
+
             <label for="message">Your Message</label>
             <textarea id="message" name="message" rows="6" placeholder="Write your message here" required></textarea>
-            
-            <button type="submit">Send Message</button>
+
+            <button type="submit">Send Message via WhatsApp</button>
         </form>
-        
+
         <div class="contact-details">
             <h2>Get in Touch</h2>
             <p><strong>Phone:</strong> 0702 473 609 / 0788 210 783</p>
@@ -123,7 +144,7 @@
             <p><strong>Address:</strong> N.D.C.U Building, Gakere Street, 2nd Floor, Nyeri Town, Kenya</p>
         </div>
     </div>
-    
+
     <!-- Home Button -->
     <a href="/" class="home-button">Home</a>
 </body>
