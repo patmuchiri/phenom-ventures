@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonials | Phenom Ventures Ltd</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link your external styles file here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <style>
-        /* Enhanced font style for testimonials */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f7f7f7;
             color: #333;
         }
 
-        /* Home Button Style */
         .home-button {
             position: fixed;
             bottom: 20px;
@@ -33,7 +31,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
-        /* Testimonials Section */
         .container {
             margin-top: 50px;
             padding: 20px;
@@ -66,6 +63,47 @@
             font-size: 1.1em;
             color: #2c7fbd;
         }
+
+        /* Partners section with background image */
+        .partners-section {
+            text-align: center;
+            margin-top: 50px;
+            padding: 40px;
+            background-image: url('{{ url_for('static', filename='images/partner.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .partners-section h2 {
+            color: #fff;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .partners-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            height: 100px;
+        }
+
+        .partners-logos img {
+            height: 80px;
+            margin: 0 15px;
+            animation: slide 10s infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(-100%); }
+            40% { transform: translateX(-200%); }
+            60% { transform: translateX(-300%); }
+            80% { transform: translateX(-400%); }
+            100% { transform: translateX(0); }
+        }
     </style>
 </head>
 <body>
@@ -87,8 +125,20 @@
         </div>
     </div>
 
+    <!-- Partners Section -->
+    <div class="partners-section">
+        <h2>Our Partners</h2>
+        <div class="partners-logos">
+            <img src="{{ url_for('static', filename='images/mnp.png') }}" alt="MNP Partner Logo">
+            <img src="{{ url_for('static', filename='images/ncfa.png') }}" alt="NCFA Partner Logo">
+            <img src="{{ url_for('static', filename='images/omc.png') }}" alt="OMC Partner Logo">
+	    <img src="{{ url_for('static', filename='images/raybells.jpg') }}" alt="RAYBELLS Partner Logo">
+        </div>
+    </div>
+
     <!-- Home Button -->
     <a href="{{ url_for('home') }}" class="home-button">Home</a>
 
 </body>
 </html>
+
