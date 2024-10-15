@@ -5,23 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phenom Ventures Ltd - Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* General Reset */
+        body {
+            margin: 0; /* Remove default margin */
+            font-family: Arial, sans-serif; /* Font style for the body */
+            line-height: 1.6; /* Improve readability */
+        }
+
+        /* Header styles */
+        .header-container {
+            display: flex;
+            align-items: center; /* Center items vertically */
+            justify-content: space-between; /* Distribute space between logo and navigation */
+            padding: 10px 20px; /* Add padding around the header */
+            background-color: #fff; /* Set background color */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+        }
+        .logo {
+            width: 80px; /* Set the width of the logo */
+            height: auto; /* Maintain aspect ratio */
+        }
+        nav {
+            flex-grow: 1; /* Allow nav to take remaining space */
+        }
+        nav ul {
+            list-style: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+            margin: 0; /* Remove margin */
+            display: flex; /* Use flexbox for nav items */
+            justify-content: flex-end; /* Align nav items to the right */
+        }
+        nav li {
+            margin-left: 20px; /* Space between nav items */
+        }
+        nav a {
+            text-decoration: none; /* Remove underline from links */
+            color: #007BFF; /* Link color */
+            font-weight: bold; /* Bold text */
+        }
+        nav a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Section styles */
+        .section {
+            padding: 20px; /* Padding for sections */
+            margin: 20px; /* Margin around sections */
+            background-color: #f9f9f9; /* Background color for sections */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for sections */
+        }
+
+        /* Footer styles */
+        footer {
+            text-align: center; /* Center footer text */
+            padding: 20px; /* Padding for footer */
+            background-color: #fff; /* Background color for footer */
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Shadow for footer */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            .header-container {
+                flex-direction: column; /* Stack header items vertically */
+                align-items: flex-start; /* Align items to the left */
+            }
+            nav ul {
+                flex-direction: column; /* Stack nav items vertically */
+                align-items: flex-start; /* Align items to the left */
+                width: 100%; /* Full width for mobile */
+                display: none; /* Hide navigation by default */
+            }
+            nav.active ul {
+                display: flex; /* Show navigation when active */
+            }
+            nav .menu-toggle {
+                display: block; /* Show menu toggle button */
+                cursor: pointer; /* Change cursor on hover */
+            }
+            nav li {
+                margin: 10px 0; /* Space between nav items */
+                width: 100%; /* Full width for mobile */
+            }
+            nav a {
+                display: block; /* Block display for links */
+                padding: 10px; /* Add padding for links */
+                width: 100%; /* Full width for links */
+                text-align: left; /* Align text to the left */
+            }
+        }
+
+        .menu-toggle {
+            display: none; /* Hide toggle button by default */
+            font-size: 20px; /* Font size for toggle */
+        }
+
+    </style>
 </head>
 <body>
     <header>
-    <div class="header-container">
-        <a href="{{ url_for('home') }}">
-            <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Phenom Ventures Ltd Logo" class="logo">
-        </a>
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('about') }}">About Us</a></li>
-                <li><a href="{{ url_for('services') }}">Services</a></li>
-                <li><a href="{{ url_for('portfolio') }}">Portfolio</a></li>
-                <li><a href="{{ url_for('testimonials') }}">Testimonials</a></li>
-                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Phenom Ventures Ltd Logo" class="logo">
+            </a>
+            <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger icon -->
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                    <li><a href="{{ url_for('services') }}">Services</a></li>
+                    <li><a href="{{ url_for('portfolio') }}">Portfolio</a></li>
+                    <li><a href="{{ url_for('testimonials') }}">Testimonials</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <section id="home" class="section">
@@ -40,6 +139,13 @@
     <footer>
         <p>&copy; 2024 Phenom Ventures Ltd. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active'); // Toggle active class for menu
+        }
+    </script>
 </body>
 </html>
 
