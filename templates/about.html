@@ -54,8 +54,8 @@
         .team-member img {
             border-radius: 50%;
             margin-right: 15px;
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             object-fit: cover;
             border: 2px solid #007BFF; /* Sky Blue */
         }
@@ -97,14 +97,15 @@
 <body>
     <div class="container">
         <h1>About Us</h1>
-        
+
         <div class="section history">
             <h2>Company History</h2>
             <p>Founded in 2013, Phenom Ventures Ltd has been at the forefront of providing innovative ICT solutions and services. Our dedication to excellence and customer satisfaction has driven our growth and success over the years.</p>
         </div>
-        
+
         <div class="section team">
             <h2>Meet Our Team</h2>
+
             <div class="team-member">
                 <img src="{{ url_for('static', filename='profile.jpg') }}" alt="Patrick Muchiri" class="profile-img">
                 <div>
@@ -113,8 +114,18 @@
                     <p>Dedicated Technical Support Engineer with 8 years of experience helping organizations maintain smooth operations. Expertise in ICT systems and network infrastructure environments. Commended for rapidly and effectively resolving downtime and efficiently integrating new hardware and software components. Self-motivated and always looking for ways to make a positive difference.</p>
                 </div>
             </div>
+
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='faith.jpg') }}" alt="Faith Waithera" class="profile-img">
+                <div>
+                    <h3>Faith Waithera</h3>
+                    <p><strong>Accountant / ICT Assistant</strong></p>
+                    <p>Devoted as an I.C.T assistant to collaborate with the team to ensure smooth performance. Ensures accurate record-keeping of the Company's finances, invoicing, and receipting of clients. Always available to attend and respond to clients' calls and messages. With experience in sales, she's part of our online marketing/advertising team.</p>
+                </div>
+            </div>
+
         </div>
-        
+
         <div class="section mission">
             <h2>Our Mission</h2>
             <p>To deliver exceptional ICT solutions and services that empower businesses and enhance their technological capabilities. We are committed to innovation, reliability, and excellence in every project we undertake.</p>
